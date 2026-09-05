@@ -1,0 +1,11 @@
+/* Styling for the reusable Shoes & Bags component */
+:host {
+    display:block;
+    padding: 25px;
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+h1 {
+    margin-top: 0;
+}

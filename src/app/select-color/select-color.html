@@ -1,0 +1,17 @@
+<!-- This component contains the colour selector because both laces
+ and Shoes & Bags need the same colour selection feature.
+ keeping it here allows us to reuse the same component instead of
+ writing the colour selector twice. -->
+<h3>SELECT COLOUR</h3>
+
+<div class="colour-grid">
+    @for (colour of colours; track colour) {
+    <button
+    class="colour-box"
+    [style.background-color]="colour"
+    [attr.aria-label]="colour"
+    [title]="colour">
+    </button>
+}
+</div>
+    
