@@ -10,14 +10,13 @@ h3 {
 }
 .colour-grid {
     display: grid;
-    grid-template-columns: repeat(10, 45px);
-    gap: 8px;
+    grid-template-columns: repeat(10, 30px);
+    gap: 6px;
 }
+
 .colour-box {
-   width: 45px;
-   height: 45px;
-   border: 2px solid #ddd;
-   cursor: pointer;
+   width: 30px;
+   height: 30px;
 }
 .colour-box:hover {
     border: 2px solid #000;
