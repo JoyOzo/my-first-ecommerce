@@ -24,10 +24,10 @@ export class Login {
 
   onSubmit(): void {
     if (this.loginForm.invalid) {
-      this.loginForm.markAllAsTouched();
-      this.loginError = 'Invalid username or password';
-      return;
-    }
+  this.loginForm.markAllAsTouched();
+  this.loginError = '';
+  return;
+}
 
     this.loginError = '';
     console.log('Login form submitted:', this.loginForm.value);

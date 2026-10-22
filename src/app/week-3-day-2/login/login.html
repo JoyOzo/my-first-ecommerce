@@ -1,35 +1,46 @@
 <div class="login-container">
 
   <h2>MY ACCOUNT</h2>
-  @if (loginError) {
-  <p class="login-error">{{ loginError }}</p>
-}
+ 
 
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 
-    <!-- Email field -->
-    <div class="form-group">
+<!-- Email field -->
+<div class="form-group">
+  <input
+    id="email"
+    type="email"
+    formControlName="email"
+    placeholder="Please type your Email Address:"
+  >
 
-      <input
-        id="email"
-        type="email"
-        formControlName="email"
-        placeholder="Please type your Email Address:"
-      >   
+  @if (loginForm.controls.email.touched &&
+       loginForm.controls.email.hasError('required')) {
+    <p class="login-error">Email address is required.</p>
+  } @else if (loginForm.controls.email.value &&
+             !(loginForm.controls.email.value | emailValid)) {
+    <p class="login-error">Please enter a valid email address.</p>
+  }
+</div>
 
-    </div>
+<!-- Password field -->
+<div class="form-group">
+  <input
+    id="password"
+    type="password"
+    formControlName="password"
+    placeholder="Please enter your Password:"
+  >
 
-    <!-- Password field -->
-    <div class="form-group">
-      
-      <input
-        id="password"
-        type="password"
-        formControlName="password"
-        placeholder="Please enter your Password:"
-      >
+  @if (loginForm.controls.password.touched &&
+       loginForm.controls.password.hasError('required')) {
+    <p class="login-error">Password is required.</p>
+  }
 
-    </div>
+  @if (loginError) {
+    <p class="login-error">{{ loginError }}</p>
+  }
+</div>
 
     <!-- Forgot password -->
     <a href="#" class="forgot-password">
